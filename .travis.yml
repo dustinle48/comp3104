@@ -4,6 +4,11 @@ node_js:
 deploy:
   provider: pages
   skip_cleanup: true
+  ## Could you please confirm that you have 
+  #+ the environment variable below set up with a token?
+  #+ If you follow this weeks lab, there's an example on
+  #+ subverting the token process and using their OAuth
+  #+ app from the market place
   github_token: $github_token
   local_dir: build
   on:
