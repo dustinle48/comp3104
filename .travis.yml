@@ -2,9 +2,16 @@ language: node_js
 node_js:
   - "stable"
 deploy:
-  provider: pages
+  provider: script
+  script: bash scripts/deploy.sh
   skip_cleanup: true
   github_token: $github_token
   local_dir: build
   on:
     branch: master
+  #!/bin/bash
+  now public --token=$NOW_TOKEN
+
+before_install:
+  - "npm config set spin false"
+  - npm i -g now
